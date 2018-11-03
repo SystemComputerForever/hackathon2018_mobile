@@ -5,36 +5,45 @@
     android:background="@drawable/bg_post_2"
     android:orientation="vertical">
 
-    <android.support.v7.widget.CardView
+    <android.support.v7.widget.CardView xmlns:app="http://schemas.android.com/apk/res-auto"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_margin="15dp">
+        android:layout_margin="15dp"
+        app:cardBackgroundColor="#EEFFFFFF"
+        app:cardCornerRadius="3dp"
+        app:cardElevation="5dp">
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:orientation="vertical">
 
+            <!-- Location Photo -->
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                android:src="@drawable/pic_taiwan_view"
+                android:scaleType="centerCrop"/>
+
             <!-- Title -->
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:padding="5dp"
                 android:paddingStart="10dp"
                 android:paddingEnd="10dp"
+                android:background="#11000000"
                 android:text="This is the title heyyyyyyyyyyyy"
                 android:textSize="20dp"
                 android:textStyle="bold" />
-
-            <!-- Location Photo -->
-            <ImageView
-                android:layout_width="match_parent"
-                android:layout_height="200dp" />
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="100dp"
                 android:orientation="horizontal"
-                android:padding="10dp">
+                android:paddingStart="10dp"
+                android:paddingEnd="10dp"
+                android:gravity="center_vertical">
 
                 <!-- Publisher icon -->
                 <ImageView
@@ -46,14 +55,15 @@
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:orientation="vertical">
+                    android:layout_marginLeft="15dp"
+                    android:orientation="vertical"
+                    android:gravity="center_vertical">
 
                     <!-- User name -->
                     <TextView
                         android:id="@+id/post_userid"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_marginLeft="15dp"
                         android:gravity="bottom"
                         android:text="userid123"
                         android:textSize="20dp" />
@@ -62,6 +72,7 @@
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:layout_marginTop="5dp"
                         android:drawableLeft="@drawable/ic_location"
                         android:text="location" />
                 </LinearLayout>
@@ -230,21 +241,5 @@
         </LinearLayout>
 
     </android.support.v7.widget.CardView>
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:background="#0A000000"
-        android:orientation="vertical">
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="100dp"
-            android:layout_marginLeft="10dp"
-            android:gravity="bottom">
-
-        </LinearLayout>
-
-    </LinearLayout>
 
 </LinearLayout>
