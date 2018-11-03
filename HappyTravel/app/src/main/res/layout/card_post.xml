@@ -6,6 +6,7 @@
     android:layout_height="wrap_content"
     android:layout_margin="6dp"
     android:padding="6dp"
+    android:clickable="true"
     app:cardBackgroundColor="#22dddddd"
     app:cardCornerRadius="2dp"
     app:cardElevation="5dp">
@@ -52,13 +53,25 @@
                 android:textSize="20sp"
                 android:textStyle="bold" />
 
-            <TextView
+            <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="10dp"
-                android:layout_marginEnd="10dp"
-                android:text="Start Date: "
-                />
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginEnd="10dp"
+                    android:text="Start date : "/>
+
+                <TextView
+                    android:id="@+id/startdate"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="21 Dec 2018" />
+
+            </LinearLayout>
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -70,7 +83,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginStart="10dp"
                     android:layout_marginEnd="10dp"
-                    android:text="Pulisher: "/>
+                    android:text="Pulisher : "/>
 
                 <TextView
                     android:id="@+id/userid"
