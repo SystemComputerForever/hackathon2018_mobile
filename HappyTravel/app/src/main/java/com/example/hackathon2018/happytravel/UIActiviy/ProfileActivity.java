@@ -5,9 +5,9 @@ import android.os.Bundle;
 import com.example.hackathon2018.happytravel.Controller.RestController;
 import com.example.hackathon2018.happytravel.Function.CallBackFunction;
 import com.example.hackathon2018.happytravel.R;
-import com.example.hackathon2018.happytravel.UIActiviy.BasicActivity.NavigationActivity;
+import com.example.hackathon2018.happytravel.UIActiviy.BasicActivity.NoNavigationActivity;
 
-public class ProfileActivity extends NavigationActivity implements CallBackFunction {
+public class ProfileActivity extends NoNavigationActivity implements CallBackFunction {
 
     private RestController tpc ;
     private Context mContext;
