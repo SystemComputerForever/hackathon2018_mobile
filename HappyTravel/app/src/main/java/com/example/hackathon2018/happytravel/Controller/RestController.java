@@ -20,7 +20,7 @@ import com.google.gson.Gson;
 
 import java.util.HashMap;
 
-public class TravelPostController extends AsyncTask<String, Void, String> {
+public class RestController extends AsyncTask<String, Void, String> {
     private View progress_form;
     private Context mContext;
     private DrawerLayout drawer;
@@ -30,14 +30,16 @@ public class TravelPostController extends AsyncTask<String, Void, String> {
     private Gson gson = new Gson();
     private SharedPreferences mPrefs;
     private OnClickMethod ocm = new OnClickMethod();
+    private String link ;
 
-    public TravelPostController(View progressview, Context mContext, DrawerLayout drawer) {
+    public RestController(View progressview, Context mContext, DrawerLayout drawer,String link) {
         this.mContext = mContext;
         this.progress_form = progressview;
         this.drawer = drawer;
         mPrefs = PreferenceManager.getDefaultSharedPreferences(mContext);
         //   tp = gson.fromJson(, Travelpost.class);
         mCallback = (CallBackFunction) mContext;
+        this.link = link;
 
     }
 
@@ -52,7 +54,7 @@ public class TravelPostController extends AsyncTask<String, Void, String> {
         try {
             HashMap<String, String> data = new HashMap<>();
             REST rest = new REST();
-            response = rest.ClientData("the link", data, "POST", mContext);
+            response = rest.ClientData(link, data, "POST", mContext);
             Thread.sleep(2000);
         } catch (Exception ex) {
             return "Lost Connectivity";
@@ -68,7 +70,7 @@ public class TravelPostController extends AsyncTask<String, Void, String> {
                 ab.setAlertDialog(mContext,false,ocm.errorOnClick(mContext),null,"OK",null,"Error","Server Maintenance").show();
                 break;
             case "Lost Connectivity":
-                 ab.setAlertDialog(mContext,false,ocm.errorOnClick(mContext),null,"OK",null,"Error","Connectivity Problem").show();
+                ab.setAlertDialog(mContext,false,ocm.errorOnClick(mContext),null,"OK",null,"Error","Connectivity Problem").show();
                 break;
             default:
                 if (!result.isEmpty()) {

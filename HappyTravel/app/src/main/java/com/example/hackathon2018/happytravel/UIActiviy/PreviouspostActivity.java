@@ -8,14 +8,14 @@ import com.example.hackathon2018.happytravel.Function.CallBackFunction;
 import com.example.hackathon2018.happytravel.R;
 import com.example.hackathon2018.happytravel.UIActiviy.BasicActivity.NavigationActivity;
 
-public class TravelpostActivity extends NavigationActivity implements CallBackFunction {
+public class PreviouspostActivity extends NavigationActivity implements CallBackFunction {
 
     private RestController tpc;
     private Context mContext;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        setContentView(R.layout.activity_travelpost);
+        setContentView(R.layout.activity_previouspost);
         super.onCreate(savedInstanceState);
         mContext = this;
        /* RecyclerView recyclerView;

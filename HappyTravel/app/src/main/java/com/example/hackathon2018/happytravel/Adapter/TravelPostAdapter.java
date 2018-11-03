@@ -1,19 +1,17 @@
 package com.example.hackathon2018.happytravel.Adapter;
 
+import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-
-import com.example.hackathon2018.happytravel.Controller.TravelPostController;
 import com.example.hackathon2018.happytravel.R;
-
 import java.util.ArrayList;
 
 /**
  * Created by Benix on 3/11/2018.
  */
 
-/*public class TravelPostAdapter extends RecyclerView.Adapter<MyAdapter.ViewHolder>
+public class TravelPostAdapter extends RecyclerView.Adapter<TravelPostAdapter.ViewHolder>
 {
     private ArrayList<String> data;
 
@@ -25,7 +23,7 @@ import java.util.ArrayList;
     @Override
     public TravelPostAdapter.ViewHolder onCreateViewHolder(ViewGroup parent, int viewType)
     {
-        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_view, parent, false);
+        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.card_post, parent, false);
         ViewHolder viewholder = new ViewHolder(view);
         return viewholder;
     }
@@ -33,22 +31,22 @@ import java.util.ArrayList;
     @Override
     public void onBindViewHolder(ViewHolder holder, int position)
     {
-        holder.txtItem.setText(mDataSet.get(position));
+      //  holder.txtItem.setText(mDataSet.get(position));
     }
 
     @Override
     public int getItemCount()
     {
-        return mDataSet.size();
+        return data.size();
     }
 
     public class ViewHolder extends RecyclerView.ViewHolder
     {
-        public TextView txtItem;
+       // public TextView txtItem;
         public ViewHolder(View v)
         {
             super(v);
-            txtItem = (TextView) v.findViewById(R.id.txtItem);
+           // txtItem = (TextView) v.findViewById(R.id.txtItem);
         }
     }
-}*/
+}

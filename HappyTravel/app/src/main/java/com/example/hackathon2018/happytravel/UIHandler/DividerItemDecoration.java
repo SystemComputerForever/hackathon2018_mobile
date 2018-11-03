@@ -12,8 +12,6 @@ import android.graphics.Rect;
 import android.graphics.drawable.Drawable;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
-import android.support.v7.widget.RecyclerView.State;
-import android.util.Log;
 import android.view.View;
 
 
@@ -22,7 +20,7 @@ import android.view.View;
  * <p/>
  * See the license above for details.
  */
-/*public class DividerItemDecoration extends RecyclerView.ItemDecoration {
+public class DividerItemDecoration extends RecyclerView.ItemDecoration {
 
     private static final int[] ATTRS = new int[]{
             android.R.attr.listDivider
@@ -52,7 +50,7 @@ import android.view.View;
 
     @Override
     public void onDraw(Canvas c, RecyclerView parent) {
-        Log.v("recyclerview - itemdecoration", "onDraw()");
+       // Log.v("recyclerview - itemdecoration", "onDraw()");
 
         if (mOrientation == VERTICAL_LIST) {
             drawVertical(c, parent);
@@ -104,4 +102,4 @@ import android.view.View;
             outRect.set(0, 0, mDivider.getIntrinsicWidth(), 0);
         }
     }
-}*/
+}
