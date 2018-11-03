@@ -20,6 +20,7 @@
 
             <!-- Location Photo -->
             <ImageView
+                android:id="@+id/pic_location"
                 android:layout_width="match_parent"
                 android:layout_height="200dp"
                 android:src="@drawable/pic_taiwan_view"
@@ -27,6 +28,7 @@
 
             <!-- Title -->
             <TextView
+                android:id="@+id/title"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:padding="5dp"
@@ -39,7 +41,7 @@
 
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="100dp"
+                android:layout_height="80dp"
                 android:orientation="horizontal"
                 android:paddingStart="10dp"
                 android:paddingEnd="10dp"
@@ -47,7 +49,7 @@
 
                 <!-- Publisher icon -->
                 <ImageView
-                    android:id="@+id/poat_icon"
+                    android:id="@+id/user_icon"
                     android:layout_width="65dp"
                     android:layout_height="65dp"
                     android:src="@drawable/pic_profileicon" />
@@ -61,15 +63,16 @@
 
                     <!-- User name -->
                     <TextView
-                        android:id="@+id/post_userid"
+                        android:id="@+id/username"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:gravity="bottom"
-                        android:text="userid123"
+                        android:text="username"
                         android:textSize="20dp" />
 
                     <!-- Location -->
                     <TextView
+                        android:id="@+id/user_location"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="5dp"
@@ -81,7 +84,7 @@
 
             <!-- Maybe some requires? -->
             <TextView
-                android:id="@+id/post_requires"
+                android:id="@+id/requires"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="15dp"
@@ -114,7 +117,7 @@
                     android:background="@drawable/bg_profile_line" />
 
                 <TextView
-                    android:id="@+id/post_destination"
+                    android:id="@+id/destination"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:gravity="center_vertical"
@@ -147,7 +150,7 @@
                     android:background="@drawable/bg_profile_line" />
 
                 <TextView
-                    android:id="@+id/post_startdate"
+                    android:id="@+id/startdate"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:gravity="center_vertical"
@@ -180,7 +183,7 @@
                     android:background="@drawable/bg_profile_line" />
 
                 <TextView
-                    android:id="@+id/post_enddate"
+                    android:id="@+id/enddate"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:gravity="center_vertical"
@@ -213,7 +216,7 @@
                     android:background="@drawable/bg_profile_line" />
 
                 <TextView
-                    android:id="@+id/post_estimateddays"
+                    android:id="@+id/estimated_days"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:gravity="center_vertical"
@@ -231,6 +234,7 @@
                 android:orientation="horizontal">
 
                 <Button
+                    android:id="@+id/btn_join"
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
                     android:background="#11000000"
