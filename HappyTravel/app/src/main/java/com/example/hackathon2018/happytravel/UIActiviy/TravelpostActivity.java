@@ -3,6 +3,7 @@ package com.example.hackathon2018.happytravel.UIActiviy;
 import android.content.Context;
 import android.os.Bundle;
 import android.support.v7.widget.DividerItemDecoration;
+import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 
@@ -31,11 +32,12 @@ public class TravelpostActivity extends NavigationActivity implements CallBackFu
             Dataset.add(i + "");
         }
         TravelPostAdapter myAdapter = new TravelPostAdapter(Dataset);
-        LinearLayoutManager layoutManager = new LinearLayoutManager(this); //設定此 layoutManager 為 linearlayout (類似ListView)
-        layoutManager.setOrientation(LinearLayoutManager.HORIZONTAL);
+        GridLayoutManager gl= new  GridLayoutManager(this, 2);
+      //  LinearLayoutManager layoutManager = new LinearLayoutManager(this); //設定此 layoutManager 為 linearlayout (類似ListView)
+      //  layoutManager.setOrientation(LinearLayoutManager.VERTICAL);
         recyclerView = findViewById(R.id.recyclerView);
-        recyclerView.addItemDecoration(new DividerItemDecoration(this, DividerItemDecoration.HORIZONTAL)); //設定分割線
-        recyclerView.setLayoutManager(layoutManager); //設定 LayoutManager
+       // recyclerView.addItemDecoration(new DividerItemDecoration(this, DividerItemDecoration.VERTICAL)); //設定分割線
+        recyclerView.setLayoutManager(gl); //設定 LayoutManager
         recyclerView.setAdapter(myAdapter); //設定 Adapter*/
         refresh();
     }
