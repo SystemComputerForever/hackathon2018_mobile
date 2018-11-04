@@ -27,19 +27,19 @@ public class TravelpostActivity extends NavigationActivity implements CallBackFu
         mContext = this;
         RecyclerView recyclerView;
         ArrayList<String> Dataset = new ArrayList<String>();
-        for(int i = 0; i < 10; i++)
-        {
+        for (int i = 0; i < 10; i++) {
             Dataset.add(i + "");
         }
         TravelPostAdapter myAdapter = new TravelPostAdapter(Dataset);
         LinearLayoutManager layoutManager = new LinearLayoutManager(this); //設定此 layoutManager 為 linearlayout (類似ListView)
-        layoutManager.setOrientation(LinearLayoutManager.VERTICAL);
-                recyclerView = (RecyclerView) findViewById(R.id.recyclerView);
-        recyclerView.addItemDecoration(new DividerItemDecoration(this, DividerItemDecoration.VERTICAL)); //設定分割線
+        layoutManager.setOrientation(LinearLayoutManager.HORIZONTAL);
+        recyclerView = findViewById(R.id.recyclerView);
+        recyclerView.addItemDecoration(new DividerItemDecoration(this, DividerItemDecoration.HORIZONTAL)); //設定分割線
         recyclerView.setLayoutManager(layoutManager); //設定 LayoutManager
         recyclerView.setAdapter(myAdapter); //設定 Adapter*/
         refresh();
     }
+
     public void refresh() {
         //tpc = new RestController(progress_form, mContext,  drawer);
         //tpc.execute();
