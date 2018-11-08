@@ -19,30 +19,4 @@
                 android:height="18dp" />
         </shape>
     </item>
-</layer-list><!--<layer-list xmlns:android="http://schemas.android.com/apk/res/android"
-    android:paddingBottom="16dp"
-    android:paddingMode="stack">
-
-    <item>
-        <shape xmlns:android="http://schemas.android.com/apk/res/android"
-            android:shape="oval">
-
-            <size
-                android:width="10dp"
-                android:height="6dp" />
-            <solid android:color="#888888" />
-        </shape>
-    </item>
-
-    <item
-        android:bottom="2dp">
-        <shape xmlns:android="http://schemas.android.com/apk/res/android"
-            android:shape="oval">
-
-            <size
-                android:width="10dp"
-                android:height="10dp" />
-            <solid android:color="#22aaaa" />
-        </shape>
-    </item>
-</layer-list>-->
+</layer-list>
