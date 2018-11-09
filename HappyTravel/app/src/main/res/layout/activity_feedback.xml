@@ -1,111 +1,214 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/bg_post_2"
     android:orientation="vertical">
 
-    <LinearLayout
+    <android.support.v7.widget.CardView xmlns:app="http://schemas.android.com/apk/res-auto"
         android:layout_width="match_parent"
-        android:layout_height="40dp">
-
-        <Button
-            android:id="@+id/btn_fb_back"
-            android:layout_width="40dp"
-            android:layout_height="40dp"
-            android:background="@drawable/ic_back"/>
-
-    </LinearLayout>
-
-    <!-- Photo(s) of that journey -->
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="150dp"></LinearLayout>
-
-    <!-- Title -->
-    <TextView
-        android:id="@+id/post_title"
-        android:layout_width="match_parent"
-        android:layout_height="50dp"
-        android:paddingLeft="15dp"
-        android:paddingBottom="10dp"
-        android:gravity="bottom"
-        android:text="Anyone free in this winter?"
-        android:textSize="24sp"
-        android:textStyle="bold"/>
-
-    <!-- Destination -->
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="50dp"
-        android:layout_marginTop="5dp"
-        android:orientation="horizontal">
-
-        <TextView
-            android:layout_width="100dp"
-            android:layout_height="match_parent"
-            android:layout_marginLeft="5dp"
-            android:gravity="center_vertical|center_horizontal"
-            android:background="#05000000"
-            android:text="Destination"
-            android:textStyle="bold"
-            android:textSize="17dp"/>
+        android:layout_height="wrap_content"
+        android:layout_margin="15dp"
+        app:cardBackgroundColor="#EEFFFFFF"
+        app:cardCornerRadius="3dp"
+        app:cardElevation="5dp">
 
         <LinearLayout
-            android:layout_width="1dp"
-            android:layout_height="match_parent"
-            android:background="@drawable/bg_profile_line"
-            android:layout_marginLeft="10dp"
-            android:layout_marginRight="10dp"/>
-
-        <TextView
-            android:id="@+id/post_destination"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:gravity="center_vertical"
-            android:text="Taiwan"
-            android:textSize="17dp" />
+            android:orientation="vertical">
 
-    </LinearLayout>
+            <!-- Location Photo -->
+            <ImageView
+                android:id="@+id/pic_location"
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                android:scaleType="centerCrop"
+                android:src="@drawable/pic_taiwan_view" />
 
-    <!--Days of Journey -->
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="50dp"
-        android:layout_marginTop="5dp"
-        android:orientation="horizontal">
+            <!-- Title -->
+            <TextView
+                android:id="@+id/title"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="#11000000"
+                android:padding="5dp"
+                android:paddingStart="10dp"
+                android:paddingEnd="10dp"
+                android:text="This is the title heyyyyyyyyyyyy"
+                android:textSize="20dp"
+                android:textStyle="bold" />
 
-        <TextView
-            android:layout_width="100dp"
-            android:layout_height="match_parent"
-            android:layout_marginLeft="5dp"
-            android:gravity="center_vertical|center_horizontal"
-            android:background="#05000000"
-            android:text="Date"
-            android:textStyle="bold"
-            android:textSize="17dp"/>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="80dp"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:paddingStart="10dp"
+                android:paddingEnd="10dp">
 
-        <LinearLayout
-            android:layout_width="1dp"
-            android:layout_height="match_parent"
-            android:background="@drawable/bg_profile_line"
-            android:layout_marginLeft="10dp"
-            android:layout_marginRight="10dp"/>
+                <!-- Publisher icon -->
+                <ImageView
+                    android:id="@+id/user_icon"
+                    android:layout_width="65dp"
+                    android:layout_height="65dp"
+                    android:src="@drawable/pic_profileicon" />
 
-        <TextView
-            android:id="@+id/post_startdate"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:gravity="center_vertical"
-            android:text="6 Oct - 8 Oct 2018"
-            android:textSize="17dp" />
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="15dp"
+                    android:gravity="center_vertical"
+                    android:orientation="vertical">
 
-    </LinearLayout>
+                    <!-- User name -->
+                    <TextView
+                        android:id="@+id/username"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="bottom"
+                        android:text="username"
+                        android:textSize="20dp" />
 
-    <!-- Comment -->
+                    <!-- Location -->
+                    <TextView
+                        android:id="@+id/user_location"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="5dp"
+                        android:drawableLeft="@drawable/ic_location"
+                        android:text="location" />
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <!-- requires of the post -->
+            <TextView
+                android:id="@+id/requires"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="15dp"
+                android:layout_marginRight="15dp"
+                android:gravity="center_vertical"
+                android:text="I prefer we can keep the budget as low as we can."
+                android:textSize="17dp" />
+
+            <!-- Destination -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_marginTop="5dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="100dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="5dp"
+                    android:gravity="center_vertical|center_horizontal"
+                    android:text="Destination"
+                    android:textSize="17dp"
+                    android:textStyle="bold" />
+
+                <LinearLayout
+                    android:layout_width="1dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:background="@drawable/bg_profile_line" />
+
+                <TextView
+                    android:id="@+id/destination"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center_vertical"
+                    android:text="Taiwan"
+                    android:textSize="17dp" />
+
+            </LinearLayout>
+
+            <!-- Start day -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_marginTop="5dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="100dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="5dp"
+                    android:gravity="center_vertical|center_horizontal"
+                    android:text="Date"
+                    android:textSize="17dp"
+                    android:textStyle="bold" />
+
+                <LinearLayout
+                    android:layout_width="1dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:background="@drawable/bg_profile_line" />
+
+                <TextView
+                    android:id="@+id/startdate"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center_vertical"
+                    android:text="22 Dec - 28 Dec 2018"
+                    android:textSize="17dp" />
+
+            </LinearLayout>
+
+
+            <!-- Estimate Days -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_marginTop="5dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="100dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="5dp"
+                    android:gravity="center_vertical|center_horizontal"
+                    android:text="Estimate Days"
+                    android:textSize="17dp"
+                    android:textStyle="bold" />
+
+                <LinearLayout
+                    android:layout_width="1dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:background="@drawable/bg_profile_line" />
+
+                <TextView
+                    android:id="@+id/estimated_days"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center_vertical"
+                    android:text="7"
+                    android:textSize="17dp" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </android.support.v7.widget.CardView>0
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
+        <!-- comment list -->
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/previous_recycler_view"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+        </android.support.v7.widget.RecyclerView>
+
     </LinearLayout>
+
 </LinearLayout>
