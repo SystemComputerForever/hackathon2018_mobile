@@ -76,7 +76,7 @@ public class TravelPostAdapter extends RecyclerView.Adapter<TravelPostAdapter.Vi
 
         ViewHolder(View v) {
             super(v);
-            image = v.findViewById(R.id.imageView);
+            image = v.findViewById(R.id.image);
             title = v.findViewById(R.id.title);
             startdate = v.findViewById(R.id.startdate);
             userid = v.findViewById(R.id.userid);
