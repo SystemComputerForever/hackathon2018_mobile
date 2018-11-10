@@ -8,6 +8,8 @@
     tools:showIn="@layout/bar_travelpost"
     android:background="#11000000">
 
+    <!-- Here will be a search bar -->
+
     <android.support.v7.widget.RecyclerView
         android:id="@+id/recyclerView"
         android:layout_width="match_parent"
