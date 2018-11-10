@@ -54,7 +54,7 @@ public class RestController extends AsyncTask<String, Void, String> {
         try {
             HashMap<String, String> data = new HashMap<>();
             REST rest = new REST();
-            response = rest.ClientData(link, data, "POST", mContext);
+            response = rest.ClientData(link, data, "GET", mContext);
             Thread.sleep(2000);
         } catch (Exception ex) {
             return "Lost Connectivity";
@@ -83,6 +83,7 @@ public class RestController extends AsyncTask<String, Void, String> {
     }
 
     private void showProgress(final boolean show) {
+        progress_form.bringToFront();
         progress_form.setVisibility(show ? View.VISIBLE : View.GONE);
         progress_form.setOnTouchListener(new View.OnTouchListener() {
             @Override
@@ -90,10 +91,12 @@ public class RestController extends AsyncTask<String, Void, String> {
                 return true;
             }
         });
-        if (!show)
+        if (!show) {
             drawer.setDrawerLockMode(DrawerLayout.LOCK_MODE_UNLOCKED);
-        else
+        }
+        else {
             drawer.setDrawerLockMode(DrawerLayout.LOCK_MODE_LOCKED_CLOSED);
+        }
 
 
     }
