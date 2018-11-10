@@ -64,7 +64,7 @@ public class RestController extends AsyncTask<String, Void, String> {
 
     @Override
     protected void onPostExecute(String result) {
-      //  showProgress(false);
+        showProgress(false);
         switch (result) {
             case "Server Maintenance":
                 ab.setAlertDialog(mContext,false,ocm.errorOnClick(mContext),null,"OK",null,"Error","Server Maintenance").show();
