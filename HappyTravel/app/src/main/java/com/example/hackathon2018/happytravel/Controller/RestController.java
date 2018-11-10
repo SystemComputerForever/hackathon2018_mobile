@@ -64,7 +64,7 @@ public class RestController extends AsyncTask<String, Void, String> {
 
     @Override
     protected void onPostExecute(String result) {
-        showProgress(false);
+      //  showProgress(false);
         switch (result) {
             case "Server Maintenance":
                 ab.setAlertDialog(mContext,false,ocm.errorOnClick(mContext),null,"OK",null,"Error","Server Maintenance").show();
@@ -83,6 +83,7 @@ public class RestController extends AsyncTask<String, Void, String> {
     }
 
     private void showProgress(final boolean show) {
+        progress_form.bringToFront();
         progress_form.setVisibility(show ? View.VISIBLE : View.GONE);
         progress_form.setOnTouchListener(new View.OnTouchListener() {
             @Override
@@ -90,10 +91,12 @@ public class RestController extends AsyncTask<String, Void, String> {
                 return true;
             }
         });
-        if (!show)
+        if (!show) {
             drawer.setDrawerLockMode(DrawerLayout.LOCK_MODE_UNLOCKED);
-        else
+        }
+        else {
             drawer.setDrawerLockMode(DrawerLayout.LOCK_MODE_LOCKED_CLOSED);
+        }
 
 
     }
