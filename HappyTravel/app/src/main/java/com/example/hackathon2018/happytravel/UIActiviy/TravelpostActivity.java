@@ -5,17 +5,21 @@ import android.os.Bundle;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.RecyclerView;
-import android.util.Log;
 import android.view.View;
-
 
 import com.example.hackathon2018.happytravel.Adapter.TravelPostAdapter;
 import com.example.hackathon2018.happytravel.Controller.RestController;
 import com.example.hackathon2018.happytravel.Function.CallBackFunction;
+import com.example.hackathon2018.happytravel.Function.FileHandler;
+import com.example.hackathon2018.happytravel.Function.GetData;
+import com.example.hackathon2018.happytravel.Item.Travelpost;
 import com.example.hackathon2018.happytravel.R;
 import com.example.hackathon2018.happytravel.UIActiviy.BasicActivity.NavigationActivity;
 
+import org.json.JSONArray;
+
 import java.util.ArrayList;
+import java.util.HashMap;
 
 
 public class TravelpostActivity extends NavigationActivity implements CallBackFunction {
@@ -24,6 +28,14 @@ public class TravelpostActivity extends NavigationActivity implements CallBackFu
     private Context mContext;
     private DrawerLayout mydrawer;
     private View progress_form;
+    private FileHandler fh = new FileHandler();
+    private HashMap<String, String> data = new HashMap<>();
+    ;
+    private RecyclerView recyclerView;
+
+    private enum variable {
+        plan_id, title, country_id, routes, est_days, start_date, end_date, requirements, mages, u_id
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -32,31 +44,43 @@ public class TravelpostActivity extends NavigationActivity implements CallBackFu
         mContext = this;
         mydrawer = findViewById(R.id.drawer_layout);
         progress_form = findViewById(R.id.progress_form);
-        RecyclerView recyclerView;
-        ArrayList<String> Dataset = new ArrayList<String>();
-        for (int i = 0; i < 10; i++) {
-            Dataset.add(i + "");
-        }
-        TravelPostAdapter myAdapter = new TravelPostAdapter(Dataset, mContext);
+        new GetData().GetCountry();
+        //you need to save the exist user here first
+        // fh.saveFile("user",)
         GridLayoutManager gl = new GridLayoutManager(this, 2);
         //  LinearLayoutManager layoutManager = new LinearLayoutManager(this); //設定此 layoutManager 為 linearlayout (類似ListView)
         //  layoutManager.setOrientation(LinearLayoutManager.VERTICAL);
         recyclerView = findViewById(R.id.recyclerView);
         // recyclerView.addItemDecoration(new DividerItemDecoration(this, DividerItemDecoration.VERTICAL)); //設定分割線
         recyclerView.setLayoutManager(gl); //設定 LayoutManager
+        ArrayList<String> Dataset = new ArrayList<String>();
+        for (int i = 0; i < 10; i++) {
+            Dataset.add(i + "");
+        }
+        TravelPostAdapter myAdapter = new TravelPostAdapter(Dataset, mContext);
         recyclerView.setAdapter(myAdapter); //設定 Adapter*/
         refresh();
     }
 
     public void refresh() {
-        tpc = new RestController(progress_form, mContext, mydrawer, "https://hackathon-718718.appspot.com/plans/getplans");
+        tpc = new RestController(progress_form, mContext, mydrawer, "https://hackathon-718718.appspot.com/plans/getplans", data, (CallBackFunction) mContext);
         tpc.execute();
     }
 
     @Override
     public void done(String result) {
-
-        Log.e("Show post", result);
-
+        ArrayList<Travelpost> travelposts = new ArrayList<Travelpost>();
+        try {
+            JSONArray travelpostsary = new JSONArray(result);
+            for (int i = 0; i < travelpostsary.length() - 1; i++) {
+                Travelpost onepost = new Travelpost(travelpostsary.getJSONObject(i).getString(variable.values()[0].name()), travelpostsary.getJSONObject(i).getString(variable.values()[1].name()), travelpostsary.getJSONObject(i).getString(variable.values()[2].name()), travelpostsary.getJSONObject(i).getString(variable.values()[3].name()), travelpostsary.getJSONObject(i).getString(variable.values()[4].name()), travelpostsary.getJSONObject(i).getString(variable.values()[5].name()), travelpostsary.getJSONObject(i).getString(variable.values()[6].name()), travelpostsary.getJSONObject(i).getString(variable.values()[7].name()), travelpostsary.getJSONObject(i).getString(variable.values()[8].name()), travelpostsary.getJSONObject(i).getString(variable.values()[10].name()));
+                travelposts.add(onepost);
+            }
+            // TravelPostAdapter myAdapter = new TravelPostAdapter(travelposts, mContext);
+            // recyclerView.setAdapter(myAdapter); //設定 Adapter*/
+        } catch (Exception ex) {
+            ex.printStackTrace();
+        }
+        //Log.e("Show post", result);
     }
 }

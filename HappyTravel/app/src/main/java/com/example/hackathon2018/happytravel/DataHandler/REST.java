@@ -5,6 +5,7 @@ import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 
 import com.example.hackathon2018.happytravel.Function.ConvertFunction;
+import com.example.hackathon2018.happytravel.MyApplication;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -20,29 +21,34 @@ import java.util.HashMap;
  */
 public class REST {
 
-    public String ClientData(String link, HashMap<String, String> data, String methodtype, Context mContext) throws IOException {
+    public String ClientData(String link, HashMap<String, String> data, String MethodType) throws IOException {
 
         String response = "";
         ConvertFunction cf = new ConvertFunction();
-        if (!isOnline(mContext)) {
+        if (!isOnline(MyApplication.getAppContext())) {
             return "Lost Connectivity";
         }
         if (!ResponseCodeCheck(link)) {
             return "Server Maintenance";
         }
         try {
+            String encodeddata = cf.encodeHashMap(data);
+            if (MethodType.equals("GET")) {
+                link += "?" + encodeddata;
 
+            }
             URL url = new URL(link);
             HttpURLConnection conn = (HttpURLConnection) url.openConnection();
-            conn.setRequestMethod(methodtype);
+            conn.setRequestMethod("POST");
             conn.setConnectTimeout(3000);
-            if (!methodtype.equals("GET")) {
+            if (MethodType.equals("POST")) {
                 conn.setDoOutput(true);
+                OutputStreamWriter wr = new OutputStreamWriter(
+                        conn.getOutputStream());
+                wr.write(encodeddata);
+                wr.flush();
+                wr.close();
             }
-            OutputStreamWriter wr = new OutputStreamWriter(
-                    conn.getOutputStream());
-            wr.write(cf.encodeHashMap(data));
-            wr.flush();
             BufferedReader reader = null;
             reader = new BufferedReader(new InputStreamReader(conn.getInputStream()));
             StringBuilder sb = new StringBuilder();
@@ -52,7 +58,6 @@ public class REST {
             }
             response = sb.toString();
             conn.disconnect();
-            wr.close();
             return response;
 
         } catch (MalformedURLException e) {

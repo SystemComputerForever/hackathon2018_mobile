@@ -16,13 +16,15 @@ public class ConvertFunction {
 
     public String encodeHashMap(HashMap<String, String> data) {
         String senddata = "";
-        for (String key : data.keySet()) {
-            try {
-                senddata += URLEncoder.encode(key, "UTF-8") + "=" + URLEncoder.encode(data.get(key), "UTF-8") + "&";
-            } catch (UnsupportedEncodingException ex) {
+        if (data.size() > 0) {
+            for (String key : data.keySet()) {
+                try {
+                    senddata += URLEncoder.encode(key, "UTF-8") + "=" + URLEncoder.encode(data.get(key), "UTF-8") + "&";
+                } catch (UnsupportedEncodingException ex) {
+                }
             }
+            senddata = senddata.substring(0, senddata.length() - 1);
         }
-        senddata = senddata.substring(0, senddata.length() - 1);
         return senddata;
     }
 

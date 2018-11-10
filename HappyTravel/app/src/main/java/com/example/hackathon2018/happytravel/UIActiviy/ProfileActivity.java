@@ -2,6 +2,9 @@ package com.example.hackathon2018.happytravel.UIActiviy;
 
 import android.content.Context;
 import android.os.Bundle;
+import android.support.v4.widget.DrawerLayout;
+import android.view.View;
+
 import com.example.hackathon2018.happytravel.Controller.RestController;
 import com.example.hackathon2018.happytravel.Function.CallBackFunction;
 import com.example.hackathon2018.happytravel.R;
@@ -11,12 +14,16 @@ public class ProfileActivity extends NoNavigationActivity implements CallBackFun
 
     private RestController tpc ;
     private Context mContext;
+    private DrawerLayout mydrawer;
+    private View progress_form;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
 
         setContentView(R.layout.activity_profile);
         super.onCreate(savedInstanceState);
         mContext = this;
+        mydrawer = findViewById(R.id.drawer_layout);
+        progress_form = findViewById(R.id.progress_form);
        /* RecyclerView recyclerView;
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
