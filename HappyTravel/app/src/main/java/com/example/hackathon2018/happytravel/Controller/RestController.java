@@ -54,7 +54,7 @@ public class RestController extends AsyncTask<String, Void, String> {
         try {
             HashMap<String, String> data = new HashMap<>();
             REST rest = new REST();
-            response = rest.ClientData(link, data, "POST", mContext);
+            response = rest.ClientData(link, data, "GET", mContext);
             Thread.sleep(2000);
         } catch (Exception ex) {
             return "Lost Connectivity";
