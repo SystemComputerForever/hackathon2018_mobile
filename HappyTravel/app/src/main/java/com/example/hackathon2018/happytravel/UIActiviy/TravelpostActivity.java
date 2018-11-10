@@ -2,10 +2,9 @@ package com.example.hackathon2018.happytravel.UIActiviy;
 
 import android.content.Context;
 import android.os.Bundle;
-import android.support.v7.widget.DividerItemDecoration;
 import android.support.v7.widget.GridLayoutManager;
-import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.widget.AdapterView;
 
 import com.example.hackathon2018.happytravel.Adapter.TravelPostAdapter;
 import com.example.hackathon2018.happytravel.Controller.RestController;
@@ -20,7 +19,7 @@ public class TravelpostActivity extends NavigationActivity implements CallBackFu
 
     private RestController tpc;
     private Context mContext;
-
+    private  RecyclerView recyclerView;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         setContentView(R.layout.activity_travelpost);
@@ -31,7 +30,7 @@ public class TravelpostActivity extends NavigationActivity implements CallBackFu
         for (int i = 0; i < 10; i++) {
             Dataset.add(i + "");
         }
-        TravelPostAdapter myAdapter = new TravelPostAdapter(Dataset);
+        TravelPostAdapter myAdapter = new TravelPostAdapter(Dataset,mContext);
         GridLayoutManager gl= new  GridLayoutManager(this, 2);
       //  LinearLayoutManager layoutManager = new LinearLayoutManager(this); //設定此 layoutManager 為 linearlayout (類似ListView)
       //  layoutManager.setOrientation(LinearLayoutManager.VERTICAL);

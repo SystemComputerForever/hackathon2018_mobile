@@ -18,6 +18,7 @@ public class PostActivity extends NoNavigationActivity implements CallBackFuncti
         setContentView(R.layout.activity_post);
         super.onCreate(savedInstanceState);
         mContext = this;
+
        /* RecyclerView recyclerView;
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);

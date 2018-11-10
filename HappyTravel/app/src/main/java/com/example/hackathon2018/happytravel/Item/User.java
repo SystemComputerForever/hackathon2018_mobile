@@ -7,9 +7,9 @@ import java.io.Serializable;
  */
 
 public class User implements Serializable {
-    private String u_id, uname, email, phonenum, pwd, lname, fname, yob, gender, country, city;
+    private String u_id, uname, email, phonenum, pwd, lname, fname, yob, gender, country, city, joinno;
 
-    public User(String u_id, String uname, String email, String phonenum, String pwd, String lname, String fname, String yob, String gender, String country, String city) {
+    public User(String u_id, String uname, String email, String phonenum, String pwd, String lname, String fname, String yob, String gender, String country, String city, String joinno) {
         this.u_id = u_id;
         this.uname = uname;
         this.email = email;
@@ -21,6 +21,7 @@ public class User implements Serializable {
         this.gender = gender;
         this.country = country;
         this.city = city;
+        this.joinno = joinno;
     }
 
     public String getU_id() {
@@ -109,5 +110,13 @@ public class User implements Serializable {
 
     public void setCity(String city) {
         this.city = city;
+    }
+
+    public String getJoinno() {
+        return joinno;
+    }
+
+    public void setJoino() {
+        this.joinno = joinno;
     }
 }
