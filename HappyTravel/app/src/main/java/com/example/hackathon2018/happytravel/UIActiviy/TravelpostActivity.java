@@ -22,7 +22,6 @@ public class TravelpostActivity extends NavigationActivity implements CallBackFu
 
     private RestController tpc;
     private Context mContext;
-    private RecyclerView recyclerView;
     private DrawerLayout mydrawer;
     private View progress_form;
 
@@ -56,6 +55,7 @@ public class TravelpostActivity extends NavigationActivity implements CallBackFu
 
     @Override
     public void done(String result) {
+
         Log.e("Show post", result);
 
     }

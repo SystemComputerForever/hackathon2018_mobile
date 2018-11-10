@@ -13,24 +13,11 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
-        <RelativeLayout
-            android:id="@+id/progress_form"
+        <include
+            layout="@layout/progress_form"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_gravity="center"
-            android:background="@color/transparentBlack"
-            android:filterTouchesWhenObscured="true"
-            android:fitsSystemWindows="true"
-            android:gravity="center"
-            android:visibility="gone">
+            android:layout_height="match_parent" />
 
-            <ProgressBar
-                style="?android:attr/progressBarStyleLarge"
-                android:layout_width="@dimen/progress_width"
-                android:layout_height="@dimen/progress_height"
-                android:layout_gravity="center"
-                android:visibility="visible" />
-        </RelativeLayout>
 
         <include
             layout="@layout/bar_travelpost"
