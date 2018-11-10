@@ -23,18 +23,18 @@
                 android:id="@+id/pic_location"
                 android:layout_width="match_parent"
                 android:layout_height="200dp"
-                android:src="@drawable/pic_taiwan_view"
-                android:scaleType="centerCrop"/>
+                android:scaleType="centerCrop"
+                android:src="@drawable/pic_taiwan_view" />
 
             <!-- Title -->
             <TextView
                 android:id="@+id/title"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:background="#11000000"
                 android:padding="5dp"
                 android:paddingStart="10dp"
                 android:paddingEnd="10dp"
-                android:background="#11000000"
                 android:text="This is the title heyyyyyyyyyyyy"
                 android:textSize="20dp"
                 android:textStyle="bold" />
@@ -42,10 +42,10 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="80dp"
+                android:gravity="center_vertical"
                 android:orientation="horizontal"
                 android:paddingStart="10dp"
-                android:paddingEnd="10dp"
-                android:gravity="center_vertical">
+                android:paddingEnd="10dp">
 
                 <!-- Publisher icon -->
                 <ImageView
@@ -58,8 +58,8 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:layout_marginLeft="15dp"
-                    android:orientation="vertical"
-                    android:gravity="center_vertical">
+                    android:gravity="center_vertical"
+                    android:orientation="vertical">
 
                     <!-- User name -->
                     <TextView
@@ -221,6 +221,39 @@
                     android:layout_height="match_parent"
                     android:gravity="center_vertical"
                     android:text="7"
+                    android:textSize="17dp" />
+
+            </LinearLayout>
+
+            <!-- Joined user number -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_marginTop="5dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="100dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="5dp"
+                    android:gravity="center_vertical|center_horizontal"
+                    android:text="Number of participants"
+                    android:textSize="17dp"
+                    android:textStyle="bold" />
+
+                <LinearLayout
+                    android:layout_width="1dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:background="@drawable/bg_profile_line" />
+
+                <TextView
+                    android:id="@+id/num_joined"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center_vertical"
+                    android:text="1"
                     android:textSize="17dp" />
 
             </LinearLayout>

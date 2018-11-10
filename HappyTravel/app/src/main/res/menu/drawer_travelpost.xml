@@ -9,6 +9,10 @@
             android:icon="@drawable/ic_menu_post"
             android:title="All Post" />
         <item
+            android:id="@+id/nav_"
+            android:icon="@drawable/ic_menu_history"
+            android:title="My Plan" />
+        <item
             android:id="@+id/nav_gallery"
             android:icon="@drawable/ic_menu_plan"
             android:title="Joining Plan" />
