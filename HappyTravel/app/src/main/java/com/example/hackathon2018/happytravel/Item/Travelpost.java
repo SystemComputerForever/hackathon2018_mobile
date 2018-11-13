@@ -8,9 +8,17 @@ import java.io.Serializable;
 
 public class Travelpost implements Serializable {
 
-    public String plan_id, title, country_id, routes, eest_days, start_date, end_date, requirements, images, u_id;
+    public String plan_id, title, country_id, routes, eest_days, start_date, end_date, requirements, images, u_id, country;
 
-    public Travelpost(String plan_id, String title, String country_id, String routes, String eest_days, String start_date, String end_date, String requirements, String images, String u_id) {
+    public String getCountry() {
+        return country;
+    }
+
+    public void setCountry(String country) {
+        this.country = country;
+    }
+
+    public Travelpost(String plan_id, String title, String country_id, String routes, String eest_days, String start_date, String end_date, String requirements, String images, String u_id, String country) {
         this.plan_id = plan_id;
         this.title = title;
         this.country_id = country_id;
@@ -20,7 +28,9 @@ public class Travelpost implements Serializable {
         this.end_date = end_date;
         this.requirements = requirements;
         this.images = images;
+
         this.u_id = u_id;
+        this.country = country;
     }
 
     public String getPlan_id() {

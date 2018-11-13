@@ -17,8 +17,10 @@ import android.widget.ImageView;
 
 import com.example.hackathon2018.happytravel.MyApplication;
 import com.example.hackathon2018.happytravel.R;
+import com.example.hackathon2018.happytravel.UIActiviy.MyplanActivity;
 import com.example.hackathon2018.happytravel.UIActiviy.PreviouspostActivity;
 import com.example.hackathon2018.happytravel.UIActiviy.ProfileActivity;
+import com.example.hackathon2018.happytravel.UIActiviy.TravelpostActivity;
 
 public class NavigationActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
@@ -100,14 +102,12 @@ public class NavigationActivity extends AppCompatActivity
 
         int id = item.getItemId();
 
-        if (id == R.id.nav_camera) {
-            // Handle the camera action
-        } else if (id == R.id.nav_gallery) {
-
+        if (id == R.id.nav_allpost) {
+            myIntent = new Intent(MyApplication.getAppContext(), TravelpostActivity.class);
+        } else if (id == R.id.nav_myplan) {
+            myIntent = new Intent(MyApplication.getAppContext(), MyplanActivity.class);
         } else if (id == R.id.nav_history) {
             myIntent = new Intent(MyApplication.getAppContext(), PreviouspostActivity.class);
-
-        } else if (id == R.id.nav_manage) {
 
         }
         ActivityOptions options =

@@ -29,7 +29,7 @@ public class REST {
             return "Lost Connectivity";
         }
         if (!ResponseCodeCheck(link)) {
-            return "Server Maintenance";
+          return "Server Maintenance";
         }
         try {
             String encodeddata = cf.encodeHashMap(data);
@@ -79,7 +79,7 @@ public class REST {
 
         URL url = new URL(link);
         HttpURLConnection connection = (HttpURLConnection) url.openConnection();
-        connection.setRequestMethod("GET");
+        connection.setRequestMethod("POST");
         connection.setConnectTimeout(3000);
         connection.connect();
 

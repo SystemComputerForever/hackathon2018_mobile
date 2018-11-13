@@ -33,7 +33,7 @@ public class PostActivity extends NoNavigationActivity implements CallBackFuncti
     public static final String chosen1 = "Join now";
     public static final String chosen2 = "CANCEL APPLICATION";
     private enum variable {
-        plan_id,title,country_id,routes,est_days,start_date,end_date,requirements,mages,u_id
+        plan_id,title,country_id,routes,est_days,start_date,end_date,requirements,images,u_id,country
     }
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -107,7 +107,7 @@ public class PostActivity extends NoNavigationActivity implements CallBackFuncti
         try {
             JSONArray travelpostsary = new JSONArray(result);
             for (int i = 0; i < travelpostsary.length() - 1; i++) {
-                Travelpost onepost = new Travelpost(travelpostsary.getJSONObject(i).getString(variable.values()[0].name()),travelpostsary.getJSONObject(i).getString(variable.values()[1].name()), travelpostsary.getJSONObject(i).getString(variable.values()[2].name()), travelpostsary.getJSONObject(i).getString(variable.values()[3].name()),travelpostsary.getJSONObject(i).getString(variable.values()[4].name()), travelpostsary.getJSONObject(i).getString(variable.values()[5].name()),travelpostsary.getJSONObject(i).getString(variable.values()[6].name()),travelpostsary.getJSONObject(i).getString(variable.values()[7].name()),travelpostsary.getJSONObject(i).getString(variable.values()[8].name()),travelpostsary.getJSONObject(i).getString(variable.values()[10].name()));
+                Travelpost onepost = new Travelpost(travelpostsary.getJSONObject(i).getString(variable.values()[0].name()), travelpostsary.getJSONObject(i).getString(variable.values()[1].name()), travelpostsary.getJSONObject(i).getString(variable.values()[2].name()), travelpostsary.getJSONObject(i).getString(variable.values()[3].name()), travelpostsary.getJSONObject(i).getString(variable.values()[4].name()), travelpostsary.getJSONObject(i).getString(variable.values()[5].name()), travelpostsary.getJSONObject(i).getString(variable.values()[6].name()), travelpostsary.getJSONObject(i).getString(variable.values()[7].name()), travelpostsary.getJSONObject(i).getString(variable.values()[8].name()), travelpostsary.getJSONObject(i).getString(variable.values()[9].name()), travelpostsary.getJSONObject(i).getString(variable.values()[10].name()));
                 travelposts.add(onepost);
             }
             // TravelPostAdapter myAdapter = new TravelPostAdapter(travelposts, mContext);

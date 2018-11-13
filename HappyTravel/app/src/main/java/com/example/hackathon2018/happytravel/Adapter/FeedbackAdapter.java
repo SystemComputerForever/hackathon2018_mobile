@@ -3,6 +3,7 @@ package com.example.hackathon2018.happytravel.Adapter;
 import android.app.ActivityOptions;
 import android.content.Context;
 import android.content.Intent;
+import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -10,9 +11,7 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import com.example.hackathon2018.happytravel.MyApplication;
 import com.example.hackathon2018.happytravel.R;
-import com.example.hackathon2018.happytravel.UIActiviy.PostActivity;
 
 import java.util.ArrayList;
 
@@ -41,7 +40,11 @@ public class FeedbackAdapter extends RecyclerView.Adapter<FeedbackAdapter.ViewHo
     @Override
     public void onBindViewHolder(ViewHolder holder, int position) {
         holder.user_id.setText("a");
-        holder.itemView.setOnClickListener(new View.OnClickListener() {
+        LinearLayoutManager layoutManager
+                = new LinearLayoutManager(mContext, LinearLayoutManager.HORIZONTAL, false);
+        RecyclerView myList = holder.comment_recycler_view.findViewById(R.id.comment_recycler_view);
+        myList.setLayoutManager(layoutManager);
+       /* holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent myIntent = new Intent(mContext, PostActivity.class);
@@ -49,7 +52,7 @@ public class FeedbackAdapter extends RecyclerView.Adapter<FeedbackAdapter.ViewHo
                         ActivityOptions.makeCustomAnimation(MyApplication.getAppContext(), android.R.anim.fade_in, android.R.anim.fade_out);
                 mContext.startActivity(myIntent, options.toBundle());
             }
-        });
+        });*/
     }
 
     @Override

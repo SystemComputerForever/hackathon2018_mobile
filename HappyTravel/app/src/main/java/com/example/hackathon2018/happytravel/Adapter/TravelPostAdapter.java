@@ -13,6 +13,7 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.example.hackathon2018.happytravel.Item.Travelpost;
 import com.example.hackathon2018.happytravel.MyApplication;
 import com.example.hackathon2018.happytravel.R;
 import com.example.hackathon2018.happytravel.UIActiviy.PostActivity;
@@ -24,10 +25,10 @@ import java.util.ArrayList;
  */
 
 public class TravelPostAdapter extends RecyclerView.Adapter<TravelPostAdapter.ViewHolder> {
-    private ArrayList<String> data = new ArrayList<>();
+    private ArrayList<Travelpost> data ;
     private Context mContext;
 
-    public TravelPostAdapter(ArrayList<String> data,Context mContext) {
+    public TravelPostAdapter(ArrayList<Travelpost> data, Context mContext) {
         this.data = data;
         this.mContext = mContext;
     }
@@ -45,7 +46,10 @@ public class TravelPostAdapter extends RecyclerView.Adapter<TravelPostAdapter.Vi
     @Override
     public void onBindViewHolder(ViewHolder holder, int position) {
 
-        holder.location.setText("a");
+        holder.location.setText(data.get(position).getCountry());
+        holder.title.setText(data.get(position).getTitle());
+        holder.startdate.setText(data.get(position).getStart_date());
+        holder.userid.setText(data.get(position).getU_id());
         holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
