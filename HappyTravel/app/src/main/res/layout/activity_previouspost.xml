@@ -1,67 +1,77 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical">
 
-    <RelativeLayout
+    <include
+        layout="@layout/progress_form"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
-
-        <!-- background color of quarter of top -->
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="100dp"
-            android:background="#5500CCFF" />
-
-        <ImageView
-            android:id="@+id/pic_usericon"
-            android:layout_width="match_parent"
-            android:layout_height="80dp"
-            android:layout_gravity="center_horizontal"
-            android:layout_marginTop="40dp"
-            android:src="@drawable/pic_profileicon" />
-
-    </RelativeLayout>
+        android:layout_height="match_parent" />
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="10dp"
+        android:layout_height="match_parent"
         android:orientation="vertical">
 
-        <TextView
-            android:id="@+id/user_name"
-            android:layout_width="wrap_content"
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <!-- background color of quarter of top -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="100dp"
+                android:background="#5500CCFF" />
+
+            <ImageView
+                android:id="@+id/pic_usericon"
+                android:layout_width="match_parent"
+                android:layout_height="80dp"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="40dp"
+                android:src="@drawable/pic_profileicon" />
+
+        </RelativeLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:text="Siu Ming"
-            android:textSize="20dp"
-            android:textStyle="bold" />
+            android:layout_marginBottom="10dp"
+            android:orientation="vertical">
 
-        <TextView
-            android:id="@+id/user_location"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:drawableLeft="@drawable/ic_location"
-            android:text="Hong Kong" />
+            <TextView
+                android:id="@+id/user_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="Siu Ming"
+                android:textSize="20dp"
+                android:textStyle="bold" />
 
-    </LinearLayout>
+            <TextView
+                android:id="@+id/user_location"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:drawableLeft="@drawable/ic_location"
+                android:text="Hong Kong" />
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        </LinearLayout>
 
-        <!-- previous post time line -->
-        <android.support.v7.widget.RecyclerView
-            android:id="@+id/previous_recycler_view"
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent">
 
-        </android.support.v7.widget.RecyclerView>
+            <!-- previous post time line -->
+            <android.support.v7.widget.RecyclerView
+                android:id="@+id/previous_recycler_view"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
 
+            </android.support.v7.widget.RecyclerView>
+
+        </LinearLayout>
     </LinearLayout>
-
-</LinearLayout>
+</RelativeLayout>

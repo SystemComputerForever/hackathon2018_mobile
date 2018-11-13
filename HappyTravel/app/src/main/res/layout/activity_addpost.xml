@@ -59,10 +59,13 @@
                 <Spinner
                     android:id="@+id/spinner"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content" />
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="right"
+                    android:gravity="right" />
 
             </LinearLayout>
 
+            <!-- using date picker dialog -->
             <!-- Start day-->
             <LinearLayout
                 android:layout_width="match_parent"
@@ -76,11 +79,20 @@
                     android:layout_height="wrap_content"
                     android:text="Satrt day" />
 
-                <DatePicker
+                <TextView
+                    android:id="@+id/startdate"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:calendarViewShown="false"
-                    android:datePickerMode="spinner"></DatePicker>
+                    android:layout_marginLeft="15dp"
+                    android:text="20/8/2018" />
+
+                <Button
+                    android:id="@+id/btn_selectstart"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="15dp"
+                    android:text="Select" />
+
 
             </LinearLayout>
 
@@ -97,11 +109,19 @@
                     android:layout_height="wrap_content"
                     android:text="End day" />
 
-                <DatePicker
+                <TextView
+                    android:id="@+id/enddate"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:calendarViewShown="false"
-                    android:datePickerMode="spinner"></DatePicker>
+                    android:layout_marginLeft="15dp"
+                    android:text="20/8/2018" />
+
+                <Button
+                    android:id="@+id/btn_selectend"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="15dp"
+                    android:text="Select" />
 
             </LinearLayout>
 
@@ -137,6 +157,22 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="Upload the picture of the place you wANT TO VISIT" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp">
+
+                    <!-- using *picture_listitem_comment* -->
+                    <android.support.v7.widget.RecyclerView
+                        android:id="@+id/comment_recycler_view"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="horizontal">
+
+                    </android.support.v7.widget.RecyclerView>
+
+                </LinearLayout>
 
             </LinearLayout>
 

@@ -1,9 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/bg_post_2"
     android:orientation="vertical">
+
+    <include
+        layout="@layout/progress_form"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
 
     <ScrollView
         android:layout_width="match_parent"
@@ -289,4 +294,4 @@
             </android.support.v7.widget.CardView>
         </LinearLayout>
     </ScrollView>
-</LinearLayout>
+</RelativeLayout>

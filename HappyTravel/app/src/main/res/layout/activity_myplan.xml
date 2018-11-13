@@ -8,11 +8,22 @@
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
     tools:showIn="@layout/bar_travelpost">
 
-    <!-- using *listitem_myplan* -->
-    <ListView
-        android:id="@+id/list_myplan"
+    <include
+        layout="@layout/progress_form"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_centerInParent="true" />
+        android:layout_height="match_parent" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <!-- using *listitem_myplan* -->
+        <ListView
+            android:id="@+id/list_myplan"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_centerInParent="true" />
+
+    </LinearLayout>
 
 </RelativeLayout>
