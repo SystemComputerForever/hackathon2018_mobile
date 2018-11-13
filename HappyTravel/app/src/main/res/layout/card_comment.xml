@@ -10,95 +10,106 @@
     app:cardCornerRadius="3dp"
     app:cardElevation="5dp">
 
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:padding="10dp">
+
+        <ImageView
+            android:id="@+id/user_icon"
+            android:layout_width="55dp"
+            android:layout_height="55dp"
+            android:src="@drawable/pic_profileicon" />
+
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:padding="10dp">
+            android:layout_marginLeft="10dp"
+            android:orientation="vertical">
 
-            <ImageView
-                android:id="@+id/user_icon"
-                android:layout_width="55dp"
-                android:layout_height="55dp"
-                android:src="@drawable/pic_profileicon" />
-
+            <!-- name and datetime -->
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="10dp"
-                android:orientation="vertical">
+                android:orientation="horizontal">
 
-                <!-- name and datetime -->
+                <TextView
+                    android:id="@+id/user_id"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Joe9664"
+                    android:textStyle="bold" />
+
+                <!-- show if it's commented by planner -->
+                <TextView
+                    android:id="@+id/planner_comment"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
+                    android:text="(Planner)"
+                    android:visibility="gone" />
+
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:gravity="right"
                     android:orientation="horizontal">
 
                     <TextView
-                        android:id="@+id/user_id"
+                        android:id="@+id/cm_date"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Joe9664"
-                        android:textStyle="bold" />
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:gravity="right"
-                        android:orientation="horizontal">
-
-                        <TextView
-                            android:id="@+id/cm_date"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="today" />
-
-                        <TextView
-                            android:id="@+id/cm_time"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_marginLeft="8dp"
-                            android:text="12:30" />
-
-                    </LinearLayout>
-
-                </LinearLayout>
-
-                <!-- Comment content -->
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="5dp">
+                        android:text="today" />
 
                     <TextView
-                        android:id="@+id/user_comment"
-                        android:layout_width="match_parent"
+                        android:id="@+id/cm_time"
+                        android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:drawableLeft="@drawable/ic_excellent"
-                        android:drawablePadding="10dp"
-                        android:gravity="center_vertical"
-                        android:text="This trip so funny:D" />
-
-                </LinearLayout>
-
-                <!-- image row -->
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="5dp">
-
-                    <android.support.v7.widget.RecyclerView
-                        android:id="@+id/comment_recycler_view"
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:orientation="horizontal">
-
-                    </android.support.v7.widget.RecyclerView>
+                        android:layout_marginLeft="8dp"
+                        android:text="12:30" />
 
                 </LinearLayout>
 
             </LinearLayout>
 
+            <!-- Comment content -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp">
+
+                <!-- take out the drawable if it's commented by planner -->
+                <TextView
+                    android:id="@+id/user_comment"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:drawableLeft="@drawable/ic_excellent"
+                    android:drawablePadding="10dp"
+                    android:gravity="center_vertical"
+                    android:text="This trip so funny:D" />
+
+            </LinearLayout>
+
+            <!-- image row -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp">
+
+                <!-- using *picture_listitem_comment* -->
+                <android.support.v7.widget.RecyclerView
+                    android:id="@+id/comment_recycler_view"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal">
+
+                </android.support.v7.widget.RecyclerView>
+
+            </LinearLayout>
+
         </LinearLayout>
+
+    </LinearLayout>
 
 </android.support.v7.widget.CardView>
