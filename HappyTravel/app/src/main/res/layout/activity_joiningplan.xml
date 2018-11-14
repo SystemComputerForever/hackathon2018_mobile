@@ -13,9 +13,9 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
-        <!-- using *listitem_myplan* -->
+        <!-- using *listitem_joiningplan* -->
         <ListView
-            android:id="@+id/list_myplan"
+            android:id="@+id/list_joiningplan"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_centerInParent="true" />
