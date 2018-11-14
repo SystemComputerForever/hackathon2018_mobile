@@ -294,7 +294,7 @@
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_marginBottom="5dp"
-                            android:text="Contact Details"
+                            android:text="Contact"
                             android:textStyle="bold" />
 
                         <TextView
@@ -303,7 +303,7 @@
                             android:drawableLeft="@drawable/ic_email"
                             android:drawablePadding="10dp"
                             android:gravity="center_vertical"
-                            android:text="siuming35@ggmail.com" />
+                            android:text="Click here to message me" />
 
                     </LinearLayout>
 
