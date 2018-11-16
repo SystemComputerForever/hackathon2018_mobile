@@ -200,7 +200,7 @@
                                 <TextView
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
-                                    android:drawableRight="@drawable/ic_excellent"
+                                    android:drawableRight="@drawable/ic_gy_excellent"
                                     android:drawablePadding="5dp"
                                     android:gravity="center_vertical"
                                     android:text="16" />
@@ -217,7 +217,7 @@
                                 <TextView
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
-                                    android:drawableRight="@drawable/ic_good"
+                                    android:drawableRight="@drawable/ic_gy_good"
                                     android:drawablePadding="5dp"
                                     android:gravity="center_vertical"
                                     android:text="3" />
@@ -234,7 +234,7 @@
                                 <TextView
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
-                                    android:drawableRight="@drawable/ic_notbad"
+                                    android:drawableRight="@drawable/ic_gy_notbad"
                                     android:drawablePadding="5dp"
                                     android:gravity="center_vertical"
                                     android:text="1" />
@@ -251,7 +251,7 @@
                                 <TextView
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
-                                    android:drawableRight="@drawable/ic_awful"
+                                    android:drawableRight="@drawable/ic_gy_awful"
                                     android:drawablePadding="5dp"
                                     android:gravity="center_vertical"
                                     android:text="0" />
