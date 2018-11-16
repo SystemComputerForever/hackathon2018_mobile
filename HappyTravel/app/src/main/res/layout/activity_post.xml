@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/bg_post_2"
@@ -16,9 +17,10 @@
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
+            android:layout_height="match_parent"
+            android:orientation="vertical">
 
-            <android.support.v7.widget.CardView xmlns:app="http://schemas.android.com/apk/res-auto"
+            <android.support.v7.widget.CardView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="15dp"
@@ -278,7 +280,8 @@
                         android:layout_marginTop="5dp"
                         android:layout_marginBottom="10dp"
                         android:gravity="center_horizontal"
-                        android:orientation="horizontal">
+                        android:orientation="horizontal"
+                        android:visibility="visible">
 
                         <Button
                             android:id="@+id/btn_join"
@@ -292,6 +295,41 @@
                 </LinearLayout>
 
             </android.support.v7.widget.CardView>
+
+            <!-- when planner check their post -->
+            <!-- show if there have application -->
+            <android.support.v7.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="15dp"
+                app:cardBackgroundColor="#EEFFFFFF"
+                app:cardCornerRadius="3dp"
+                app:cardElevation="5dp"
+                android:visibility="gone">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="10dp"
+                        android:text="All Application of this Plan"
+                        android:textSize="15sp"
+                        android:textStyle="bold" />
+
+                    <!-- using *listitem_accept* -->
+                    <ListView
+                        android:id="@+id/listview_application"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content" />
+
+                </LinearLayout>
+
+            </android.support.v7.widget.CardView>
+
         </LinearLayout>
     </ScrollView>
 </RelativeLayout>
