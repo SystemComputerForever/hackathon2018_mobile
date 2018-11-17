@@ -104,17 +104,17 @@
                     android:orientation="horizontal">
 
                     <TextView
-                        android:layout_width="wrap_content"
+                        android:layout_width="70dp"
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="5dp"
                         android:text="Satrt day" />
 
                     <TextView
                         android:id="@+id/startdate"
-                        android:layout_width="wrap_content"
+                        android:layout_width="100dp"
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="15dp"
-                        android:text="20/8/2018" />
+                        android:text="" />
 
                     <Button
                         android:id="@+id/btn_selectstart"
@@ -139,17 +139,17 @@
                     android:orientation="horizontal">
 
                     <TextView
-                        android:layout_width="wrap_content"
+                        android:layout_width="70dp"
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="5dp"
                         android:text="End day" />
 
                     <TextView
                         android:id="@+id/enddate"
-                        android:layout_width="wrap_content"
+                        android:layout_width="100dp"
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="15dp"
-                        android:text="20/8/2018" />
+                        android:text="" />
 
                     <Button
                         android:id="@+id/btn_selectend"
@@ -227,6 +227,31 @@
                         </android.support.v7.widget.RecyclerView>
 
                     </LinearLayout>
+
+                </LinearLayout>
+
+                <!-- schedule -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:background="#FFFFFF"
+                    android:orientation="vertical"
+                    android:paddingTop="5dp"
+                    android:paddingBottom="5dp">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="5dp"
+                        android:layout_marginRight="5dp"
+                        android:text="Plan schedule:" />
+
+                    <!-- using *listitem_addschedule_day* -->
+                    <ListView
+                        android:id="@+id/schedule_add_day"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content" />
 
                 </LinearLayout>
 
